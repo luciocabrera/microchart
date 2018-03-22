@@ -1,0 +1,61 @@
+<mvc:View
+	controllerName="microchart.BulletMicroChart"
+	xmlns="sap.suite.ui.microchart"
+	xmlns:l="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+  xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+	<m:Table height="100%" id="idTableBulletMicro"  items="{view>/}" >
+		<m:columns>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Actual" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet" visible="false">
+				<m:Text text="Below Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet" visible="false">
+				<m:Text text="Remaining" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet" visible="false">
+				<m:Text text="Over Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Progress" />
+			</m:Column>
+		</m:columns>
+		<m:items>
+			<m:ColumnListItem>
+				<m:cells>
+					<m:Text text="{view>planned}"/>
+					<m:Text text="{view>actual}" />
+					<m:Text text="{view>belowplanned}" />
+					<m:Text text="{view>remaining}" />
+          <m:Text text="{view>overplanned}" />
+						<m:FlexBox width="100%">
+              <BulletMicroChart
+                minValue="0"
+                maxValue="{view>maxValue}"
+                size="XS"
+                scale="M"
+                targetValue="{view>planned}"
+                showActualValue="false"
+                showTargetValue="false"
+                forecastValue="{= ${view>actual}>0 ? ${view>actual} : ${view>actual}*-1 }"
+                class="sapUiSmallMargin">
+                <actual>
+                  <BulletMicroChartData
+                    value="{= ${view>actual}>0 ? ${view>actual} : 0 }"
+                    color="{= ${view>actual}>1 ? 'Neutral' : 'Good' }" />
+                </actual>
+              </BulletMicroChart>
+						</m:FlexBox>
+				</m:cells>
+			</m:ColumnListItem>
+		</m:items>
+	</m:Table>
+</mvc:View>
+

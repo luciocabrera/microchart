@@ -1,0 +1,152 @@
+<mvc:View
+	controllerName="microchart.Page"
+	xmlns="sap.suite.ui.microchart"
+	xmlns:l="sap.ui.layout"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+  xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+	<l:VerticalLayout class="sapUiTinyMargin" >
+	<m:Panel headerText="mode 1: using StackedBar Micro Chart  with  %-values">
+	<m:Table id="idTablePercentage" items="{view>/}" >
+		<m:columns>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Actual" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Below Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Remaining" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Over Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Progress" />
+			</m:Column>
+		</m:columns>
+		<m:items  >
+			<m:ColumnListItem>
+				<m:cells>
+					<m:Text text="{view>planned}"/>
+					<m:Text text="{view>actual}" />
+					<m:Text text="{view>belowplanned}" />
+					<m:Text text="{view>remaining}" />
+          <m:Text text="{view>overplanned}" />
+					<m:FlexBox height="1rem" width="100%">
+					<StackedBarMicroChart size="Responsive" press="press" precision="0">
+					<bars>
+						<StackedBarMicroChartBar
+              valueColor="Neutral"
+              value="{view>belowplanned}"
+              displayValue= ' '/>
+						<StackedBarMicroChartBar valueColor="Good" value="{view>remaining}" displayValue= ' '/>
+            <StackedBarMicroChartBar valueColor="Error" value="{view>overplanned}" displayValue= ' '/>
+					</bars>
+					</StackedBarMicroChart>
+					</m:FlexBox>
+				</m:cells>
+			</m:ColumnListItem>
+		</m:items>
+	</m:Table>
+	</m:Panel>
+	<m:Panel headerText="mode 2: using StackedBar Micro Chart  with values">
+	<m:Table id="idTableAmount"  items="{view>/}" >
+		<m:columns>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Actual" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Below Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Remaining" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Over Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Progress" />
+			</m:Column>
+		</m:columns>
+		<m:items>
+			<m:ColumnListItem>
+				<m:cells>
+					<m:Text text="{view>planned}"/>
+					<m:Text text="{view>actual}" />
+					<m:Text text="{view>belowplanned}" />
+					<m:Text text="{view>remaining}" />
+          <m:Text text="{view>overplanned}" />
+					<m:FlexBox height="1rem" width="100%">
+					<StackedBarMicroChart size="Responsive" press="press" maxValue="{view>maxValue}">
+					<bars>
+						<StackedBarMicroChartBar valueColor="Neutral" value="{view>belowplanned}"/>
+						<StackedBarMicroChartBar valueColor="Good" value="{view>remaining}"/>
+            <StackedBarMicroChartBar valueColor="Error" value="{view>overplanned}"/>
+					</bars>
+					</StackedBarMicroChart>
+					</m:FlexBox>
+				</m:cells>
+			</m:ColumnListItem>
+		</m:items>
+	</m:Table>
+	</m:Panel>
+  	<m:Panel headerText="mode 3: using Delta Micro Chart">
+	<m:Table id="idTableDelta"  items="{view>/}" >
+		<m:columns>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Actual" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Below Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Remaining" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Over Planned" />
+			</m:Column>
+			<m:Column demandPopin="true" minScreenWidth="Tablet">
+				<m:Text text="Progress" />
+			</m:Column>
+		</m:columns>
+		<m:items>
+			<m:ColumnListItem>
+				<m:cells>
+					<m:Text text="{view>planned}"/>
+					<m:Text text="{view>actual}" />
+					<m:Text text="{view>belowplanned}" />
+					<m:Text text="{view>remaining}" />
+          <m:Text text="{view>overplanned}" />
+						<m:FlexBox height="80px" width="170px">
+							<DeltaMicroChart app:name="delta" press="press" isResponsive="true"
+              value1="{view>planned}"
+              value2="{view>actual}"
+              title1="Planned"
+              title2="Actual"
+              color="{= ${view>actual}>${view>planned} ? 'Error' : 'Good' }" />
+						</m:FlexBox>
+				</m:cells>
+			</m:ColumnListItem>
+		</m:items>
+	</m:Table>
+	</m:Panel>
+  <m:Panel headerText="mode 4: using Bullet Micro Chart">
+   <mvc:XMLView height="100%" viewName="microchart.BulletMicroChart"></mvc:XMLView>
+  </m:Panel>
+  <m:Panel headerText="mode 5: using Custom Bullet Micro Chart">
+   <mvc:XMLView height="100%" viewName="microchart.CustomBulletMicroChart"></mvc:XMLView>
+  </m:Panel>
+	</l:VerticalLayout>
+</mvc:View>
+

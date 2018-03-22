@@ -1,0 +1,115 @@
+/* Bar Backcolor for the spent amount  */
+
+:root {
+  --main-bg-overplanned-color: rgb(169, 19, 20);
+  --main-bg-remaining-color: rgb(230, 217, 208);
+  --main-bg-actual-color: rgb(95, 64, 44);
+  --main-bg-forecast-good: rgb(252, 244, 222);
+  --maccchiato: rgb(185, 153, 126);
+  --dopio: rgb(81, 61, 56);
+  --main-br-style: solid;
+  --main-br-width: thin;
+  --main-br-targetBar-color: var(--main-bg-actual-color);
+}
+
+.sapSuiteStackedMCBarSemanticColorNeutral {
+  background-color: var(--main-bg-actual-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+}
+
+/* Bar Backcolor for the spent amount over the planned  */
+
+.sapSuiteStackedMCBarSemanticColorError {
+  background-color: var(--main-bg-overplanned-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+}
+
+/* Bar Backcolor for the remaining amount  */
+
+.sapSuiteStackedMCBarSemanticColorGood {
+  background-color: var(--main-bg-remaining-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+}
+
+/* BulletMicroChart customizations */
+
+/* Bar Backcolor for the Actual value  */
+
+/* .sapSuiteBMCBarValue.sapSuiteBMCSemanticColorNeutral.sapSuiteBMCSizeM {
+  background-color: var(--main-bg-actual-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+}
+
+/* Bar Backcolor  */
+
+/* .sapSuiteBMCBar.sapSuiteBMCScaleColorMediumLight.sapSuiteBMCSizeM {
+  background-color: var(--main-bg-remaining-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+} */
+
+/* Bar Backcolor for the Actual value
+
+
+
+*/
+
+/* Bar Backcolor for the Actual value  */
+
+.sapSuiteBMCBarValue.sapSuiteBMCSemanticColorNeutral {
+  background-color: var(--main-bg-actual-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+}
+
+/* Bar Backcolor (remaining)  */
+
+.sapSuiteBMCBar.sapSuiteBMCScaleColorMediumLight {
+  background-color: var(--main-bg-remaining-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+}
+
+.sapSuiteBMCTopLabel {
+  height: 0rem !important;
+  visibility: hidden !important;
+}
+
+/* Bar Backcolor Color for the target (planned) value  */
+
+.sapSuiteBMCTargetBarValue {
+  background-color: var(--main-br-targetBar-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+}
+
+/* Bar Backcolor Color for the Forecast neutral  */
+
+.sapSuiteBMCForecastBarValue.sapSuiteBMCSemanticColorNeutral {
+  background-color: var(--main-br-targetBar-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+}
+
+/* Bar Backcolor Color for the Forecast Good  */
+.sapSuiteBMCForecastBarValue.sapSuiteBMCSemanticColorGood {
+  /* background-color: var(--main-bg-forecast-good) !important;*/
+  background-color: var(--maccchiato) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+}
+
+.sapSuiteBMCThreshold.sapSuiteBMCSemanticColorError {
+  background-color: var(--main-bg-overplanned-color) !important;
+  /* border-style: var(--main-br-style) !important;*/
+  border-width: var(--main-br-width) !important;
+}
