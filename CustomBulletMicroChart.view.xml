@@ -1,12 +1,12 @@
 <mvc:View
 	controllerName="microchart.CustomBulletMicroChart"
 	xmlns="microchart.control.custombulletmicrochart"
-  	xmlns:micro="sap.suite.ui.microchart"
+  xmlns:micro="sap.suite.ui.microchart"
 	xmlns:l="sap.ui.layout"
 	xmlns:m="sap.m"
-	xmlns:mvc="sap.ui.core.mvc"
-  xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
-  xmlns:html="http://www.w3.org/1999/xhtml">
+xmlns:mvc="sap.ui.core.mvc"
+
+  >
 	<m:Table height="100%" id="idTableCustomBulletMicro"  items="{view>/}" >
 		<m:columns>
 			<m:Column demandPopin="true" minScreenWidth="Tablet">
