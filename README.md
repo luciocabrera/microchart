@@ -12,6 +12,20 @@ class sap.suite.ui.microchart.BulletMicroChart
     'sap/m/library'
   ]
 ```
+## Extending the Control
+```
+  Make sure you use the right namespace, in the example the Namespace is called microchart, 
+  you should change it and use the right namespace according to your project
+  
+  
+microchart.extend('microchart.control.custombulletmicrochart.CustomBulletMicroChart',{})
+
+Example:
+
+microchart.extend('MyOwnNameSpace.control.CustomBulletMicroChart',{})
+```    
+      
+      
 ## Basic Properties
 Name | Type | Description
 ------------ | ------------- | -------------
