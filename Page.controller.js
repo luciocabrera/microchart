@@ -70,6 +70,114 @@ sap.ui.define(['sap/m/MessageToast', 'sap/ui/core/mvc/Controller'], function(
             overplanned: 0,
             maxValue: 20,
             id: '7'
+          },
+          {
+            planned: 1601475.86,
+            actual: 1849900.37,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '8'
+          },
+          {
+            planned: 100930,
+            actual: 79207.21,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '9'
+          },
+          {
+            planned: 386156.3,
+            actual: 260745.11,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '10'
+          },
+          {
+            planned: 12016,
+            actual: 10275.65,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '11'
+          },
+          {
+            planned: 580631.25,
+            actual: 265009.37,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '12'
+          },
+          {
+            planned: 394818.03,
+            actual: 230145.97,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '13'
+          },
+          {
+            planned: -124666.67,
+            actual: -12869.8,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '14'
+          },
+          {
+            planned: 124666.67,
+            actual: 12869.8,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '24'
+          },
+          {
+            planned: 2951361.03,
+            actual: 2682413.88,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '15'
+          },
+          {
+            planned: 56670.03,
+            actual: 566666.67,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '16'
+          },
+          {
+            planned: 9425.95,
+            actual: 9425.96,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '17'
+          },
+          {
+            planned: 38338.14,
+            actual: -21346.76,
+            belowplanned: 0,
+            remaining: 0,
+            overplanned: 0,
+            maxValue: 0,
+            id: '18'
           }
         ]
       };

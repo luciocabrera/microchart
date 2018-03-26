@@ -1,134 +1,111 @@
-/* Bar Backcolor for the spent amount  */
-
+/****************************************************************************
+          Bullet MicroChart Custom Classes
+*****************************************************************************/
 :root {
-    --main-bg-overplanned-color: rgb(169, 19, 20);
-    --main-bg-remaining-color: rgb(230, 217, 208);
-    --main-bg-actual-color: rgb(95, 64, 44);
-    --main-bg-forecast-good: rgb(252, 244, 222);
-    --maccchiato: rgb(185, 153, 126);
-    --dopio: rgb(81, 61, 56);
-    --main-br-style: solid;
-    --main-br-width: thin;
-    --main-br-targetBar-color: var(--main-bg-actual-color);
+  /* Main Colors JDE*/
+  --maccchiato: rgb(185, 153, 126);
+  --dopio: rgb(81, 61, 56);
+  --cappuccino: rgb(252, 244, 222);
+  --mainJDE: rgb(95, 64, 44);
+  --mainLightJDE: rgb(230, 217, 208);
+  --rooiig: rgb(169, 19, 20);
+
+  /* Color variables */
+  --main-bg-overplanned-color: var(--rooiig);
+  --main-bg-remaining-color: var(--mainLightJDE);
+  --main-bg-actual-color: var(--mainJDE);
+  --main-bg-forecast-good: var(--cappuccino);
+  --main-br-targetBar-color: var(--mainJDE);
+
+  /* border Styles */
+  --main-br-style: solid;
+  --main-br-width: thin;
 }
 
-.sapSuiteStackedMCBarSemanticColorNeutral {
-    background-color: var(--main-bg-actual-color) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-}
+/****************************************************************************
+          Bars Classes
+*****************************************************************************/
 
+/* Bar Class for the Actual value (Actual)  */
 
-/* Bar Backcolor for the spent amount over the planned  */
-
-.sapSuiteStackedMCBarSemanticColorError {
-    background-color: var(--main-bg-overplanned-color) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-}
-
-
-/* Bar Backcolor for the remaining amount  */
-
-.sapSuiteStackedMCBarSemanticColorGood {
-    background-color: var(--main-bg-remaining-color) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-}
-
-
-/* BulletMicroChart customizations */
-
-
-/* Bar Backcolor for the Actual value  */
-
-
-/* .sapSuiteBMCBarValue.sapSuiteBMCSemanticColorNeutral.sapSuiteBMCSizeM {
+.sapSuiteBMCBarValueJDE {
   background-color: var(--main-bg-actual-color) !important;
   border-style: var(--main-br-style) !important;
   border-width: var(--main-br-width) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+  height: 0.95rem !important;
 }
 
-/* Bar Backcolor  */
+/* Bar Class for the remaining value (Delta)  */
 
-
-/* .sapSuiteBMCBar.sapSuiteBMCScaleColorMediumLight.sapSuiteBMCSizeM {
+.sapSuiteBMCBarJDE {
   background-color: var(--main-bg-remaining-color) !important;
   border-style: var(--main-br-style) !important;
   border-width: var(--main-br-width) !important;
-} */
-
-
-/* Bar Backcolor for the Actual value
-
-
-
-*/
-
-
-/* Bar Backcolor for the Actual value  */
-
-.sapSuiteBMCBarValueJDE {
-    background-color: var(--main-bg-actual-color) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-    border-color: var(--main-br-targetBar-color) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+  height: 0.85rem !important;
 }
 
-
-/* Bar Backcolor (remaining)  */
-
-.sapSuiteBMCBarJDE {
-    background-color: var(--main-bg-remaining-color) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-    border-color: var(--main-br-targetBar-color) !important;
-}
-
-.sapSuiteBMCTopLabel {
-    height: 0rem !important;
-    visibility: hidden !important;
-}
-
-
-/* Bar Backcolor Color for the target (planned) value  */
+/* Bar Class for the planned value (Target)  */
 
 .sapSuiteBMCTargetBarValueJDE {
-    background-color: var(--main-br-targetBar-color) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-    border-color: var(--main-br-targetBar-color) !important;
+  background-color: var(--rooiig) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+  border-color: var(--rooiig) !important;
+  vertical-align: middle !important;
+  height: 1.2rem !important;
 }
 
-
-/* Bar Backcolor Color for the Forecast neutral  */
+/* Bar Class for the Forecast value  */
 
 .sapSuiteBMCForecastBarValueJDE {
-    background-color: var(--main-br-targetBar-color) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-    border-color: var(--main-br-targetBar-color) !important;
+  background-color: var(--main-br-targetBar-color) !important;
+  border-style: var(--main-br-style) !important;
+  border-width: var(--main-br-width) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+  height: 0.95rem !important;
 }
 
+/* Bar Class for the negative Actual value  */
 
-/* Bar Backcolor Color for the Forecast Good  */
-
-.sapSuiteBMCForecastBarValueJDE {
-    /* background-color: var(--main-bg-forecast-good) !important;*/
-    background-color: var(--maccchiato) !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-    border-color: var(--main-br-targetBar-color) !important;
+.gradientNegativeActual {
+  height: 0.85rem !important;
+  border-style: solid !important;
+  border-width: thin !important;
+  border-color: var(--mainJDE) !important;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--mainJDE),
+    var(--main-bg-remaining-color) 5px,
+    var(--mainJDE),
+    5px,
+    var(--maccchiato) 5px
+  ) !important;
+  height: 0.95rem !important;
 }
 
-.sapSuiteBMCThreshold.sapSuiteBMCSemanticColorError {
-    background-color: green !important;
-    border-color: green !important;
-    border-style: var(--main-br-style) !important;
-    border-width: var(--main-br-width) !important;
-}
+/****************************************************************************
+          Threshold Classes
+*****************************************************************************/
+
+/* Diamond shown below the bar */
 
 .sapSuiteBMCDiamond {
-    background-color: green !important;
-    border-color: green !important;
+  background-color: var(--dopio) !important;
+  border-color: var(--dopio) !important;
+  display: none !important;
+}
+
+/* Bar shown as Threshold */
+
+.sapSuiteBMCSizeXS.sapSuiteBMCThreshold {
+  background-color: var(--main-br-targetBar-color) !important;
+  border-color: var(--main-br-targetBar-color) !important;
+  height: 2rem !important;
+  top: -0.7rem !important;
+}
+
+.sapSuiteBMCBarJDE.sapSuiteBMCBarValue.sapSuiteBMCSemanticColorNeutral.sapSuiteBMCSizeXS {
+  height: 0.95rem !important;
 }

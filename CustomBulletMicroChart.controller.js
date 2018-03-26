@@ -1,14 +1,18 @@
-sap.ui.define(['sap/m/MessageToast', 'sap/ui/core/mvc/Controller'], function(
-  MessageToast,
-  Controller
-) {
-  'use strict';
+sap.ui.define(
+  ['sap/m/MessageToast', 'sap/ui/core/mvc/Controller', 'microchart/formatter'],
+  function(MessageToast, Controller, formatter) {
+    'use strict';
 
-  var PageController = Controller.extend('microchart.CustomBulletMicroChart', {
-    press: function(oEvent) {
-      MessageToast.show('The bullet micro chart is pressed.');
-    }
-  });
+    var PageController = Controller.extend(
+      'microchart.CustomBulletMicroChart',
+      {
+        formatter: formatter,
+        press: function(oEvent) {
+          MessageToast.show('The bullet micro chart is pressed.');
+        }
+      }
+    );
 
-  return PageController;
-});
+    return PageController;
+  }
+);

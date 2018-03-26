@@ -31,31 +31,15 @@
 		<m:items>
 			<m:ColumnListItem>
 				<m:cells>
-					<m:Text text="{view>planned}"/>
+					<m:Text	text="{view>planned}" />
 					<m:Text text="{view>actual}" />
 					<m:Text text="{view>belowplanned}" />
 					<m:Text text="{view>remaining}" />
           <m:Text text="{view>overplanned}" />
 						<m:FlexBox width="100%">
-              <!-- <CustomBulletMicroChart
-                minValue="0"
-                maxValue="{view>maxValue}"
-                size="XS"
-                scale="M"
-                targetValue="{view>planned}"
-                showActualValue="false"
-                showTargetValue="false"
-                forecastValue="{= ${view>actual}>0 ? ${view>actual} : ${view>actual}*-1 }"
-                class="sapUiSmallMargin">
-                <actual>
-                  <BulletMicroChartData
-                    value="{= ${view>actual}>0 ? ${view>actual} : 0 }"
-                    color="{= ${view>actual}>1 ? 'Neutral' : 'Good' }" />
-                </actual>
-              </CustomBulletMicroChart> -->
               <CustomBulletMicroChart
                 minValue="0"
-                maxValue="{view>maxValue}"
+                maxValue="{= ${view>planned} > ${view>actual} ? ${view>planned} : ${view>actual} }"
                 size="XS"
                 scale="M"
                 targetValue="{view>planned}"
@@ -65,7 +49,7 @@
                 <actual>
                   <micro:BulletMicroChartData
                     value="{view>actual}"
-                    color="{= ${view>actual}>1 ? 'Neutral' : 'Neutral' }" />
+                    color='Neutral' />
                 </actual>
                 <thresholds>
                   <micro:BulletMicroChartData value="0" color="Error"/>
